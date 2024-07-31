@@ -1,0 +1,24 @@
+name: Import SSC SAST Results into GitHub Security
+on: 
+      workflow_dispatch:
+      
+jobs:                                                  
+  Import-SSC-SAST:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      # required for all workflows
+      security-events: write
+
+      # only required for workflows in private repositories
+      actions: read
+      contents: read
+
+    steps:    
+      - name: Export SSC vulnerability data to GitHub
+        uses: fortify/github-action/ssc-export@v1
+        env:
+          SSC_URL: ${{ secrets.SSC_BASE_URL }}
+          SSC_TOKEN: ${{ secrets.SSC_AUTHTOKEN_DECODED }}
+          SSC_APPVERSION: ${{ secrets.SSC_VERSION_ID }}
+          # TOOL_DEFINITIONS: https://ftfy.mycompany.com/tool-definitions/v1/tool-definitions.yaml.zip
