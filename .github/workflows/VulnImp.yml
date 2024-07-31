@@ -20,7 +20,7 @@ jobs:
           export_config: /config/SSCToGitHub.yml
           ssc_baseUrl: ${{ secrets.SSC_BASE_URL }}
           ssc_authToken: ${{ secrets.SSC_CI_TOKEN_DECODED }}
-          ssc_version_name: MyApp:MyVersion
+          ssc_version_name: ${{ secrets.SSC_VERSION_ID }}
           # Or use ssc_version_id: 1234
           
       # Uploaded the generated file containing Fortify vulnerabilities to GitHub.
