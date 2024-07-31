@@ -27,8 +27,8 @@ jobs:
         run: ls -l
 
       - name: Find gh-fortify-sast.sarif
-        run: |
-          find . -name "gh-fortify-sast.sarif" -print
+        run: 
+          find / -name "gh-fortify-sast.sarif" -print
           if [ $? -ne 0 ]; then
             echo "File gh-fortify-sast.sarif not found"
             exit 1
