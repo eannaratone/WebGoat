@@ -22,6 +22,9 @@ jobs:
           ssc_authToken: ${{ secrets.SSC_AUTHTOKEN_DECODED }}
           ssc_version_name: ${{ secrets.SSC_VERSION_ID }}
           # Or use ssc_version_id: 1234
+
+      - name: List generated files
+        run: ls -l
           
       # Uploaded the generated file containing Fortify vulnerabilities to GitHub.
       - uses: github/codeql-action/upload-sarif@v2
