@@ -25,6 +25,14 @@ jobs:
 
       - name: List generated files
         run: ls -l
+
+      - name: Find gh-xxx.sarif file
+        run: |
+          find . -name "gh-xxx.sarif" -print
+          if [ $? -ne 0 ]; then
+            echo "File gh-xxx.sarif not found"
+            exit 1
+          fi
           
       # Uploaded the generated file containing Fortify vulnerabilities to GitHub.
       - uses: github/codeql-action/upload-sarif@v2
