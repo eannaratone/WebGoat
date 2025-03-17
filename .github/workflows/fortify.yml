@@ -56,7 +56,7 @@ jobs:
           # SETUP_EXTRA_OPTS: --on-unsigned=ignore
           # SC_CLIENT_VERSION: 24.2
           # DO_PACKAGE_DEBUG: true
-          # PACKAGE_EXTRA_OPTS: -oss -bt mvn
+          PACKAGE_EXTRA_OPTS: -oss -bt mvn
           SC_SAST_SENSOR_VERSION: 24.4.0
           # EXTRA_SC_SAST_SCAN_OPTS: 
           # DO_WAIT: true
