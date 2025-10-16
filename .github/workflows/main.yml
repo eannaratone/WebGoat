@@ -70,7 +70,7 @@ jobs:
           # SETUP_EXTRA_OPTS: --on-unsigned=ignore
           # SC_CLIENT_VERSION: 24.4.1
           # DO_PACKAGE_DEBUG: true
-          # PACKAGE_EXTRA_OPTS: -oss -bt mvn
+          PACKAGE_EXTRA_OPTS: -bt mvn -DskipTests -Dasciidoctor.skip=true
           # SC_SAST_SENSOR_VERSION: 24.4.1
           # EXTRA_SC_SAST_SCAN_OPTS: 
           # DO_WAIT: true
